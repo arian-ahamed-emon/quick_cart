@@ -1,5 +1,8 @@
 import 'package:e_commerce_app/app/app_colors.dart';
 import 'package:e_commerce_app/app/app_theme_data.dart';
+import 'package:e_commerce_app/features/auth/ui/screens/complete_profile_screen.dart';
+import 'package:e_commerce_app/features/auth/ui/screens/email_varification_screen.dart';
+import 'package:e_commerce_app/features/auth/ui/screens/otp_varification_screen.dart';
 import 'package:e_commerce_app/features/auth/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,11 +14,13 @@ class CraftyBay extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppThemeData.lightThemeData,
-      themeMode: ThemeMode.dark,
       color: AppColors.themeColor,
-      initialRoute: '/',
+      initialRoute: SplashScreen.name,
       routes: {
-        '/' : (context) => SplashScreen(),
+        SplashScreen.name : (context) => SplashScreen(),
+        EmailVarificationScreen.name: (context) => EmailVarificationScreen(),
+        OtplVarificationScreen.name : (context) => OtplVarificationScreen(),
+
       },
     );
   }

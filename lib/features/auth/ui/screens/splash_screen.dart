@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Spacer(),
-              SvgPicture.asset(AssetsPath.appLogo,height: 100,),
+              SvgPicture.asset(AssetsPath.appLogo,width: 120,),
               Spacer(),
               CircularProgressIndicator(),
             ],

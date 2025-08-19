@@ -47,8 +47,8 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
               children: [
                 for (int i = 0; i < 5; i++)
                   Container(
-                    height: 20,
-                    width: 20,
+                    height: 16,
+                    width: 16,
                     margin: const EdgeInsets.symmetric(horizontal: 2),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),

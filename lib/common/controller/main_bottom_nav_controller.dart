@@ -9,4 +9,10 @@ void changeIndex(int index){
   _selectedIndex = index;
   update();
 }
+void backToHome() {
+  changeIndex(0);
+}
+void moveToCategory(){
+  changeIndex(1);
+}
 }

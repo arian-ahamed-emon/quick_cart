@@ -10,6 +10,7 @@ class AppThemeData {
       ),
       scaffoldBackgroundColor: Colors.white,
       textTheme: TextTheme(
+        titleMedium: TextStyle(color: Colors.black54,fontSize: 20),
         titleSmall: TextStyle(color: Colors.grey, fontSize: 18),
         titleLarge: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
       ),

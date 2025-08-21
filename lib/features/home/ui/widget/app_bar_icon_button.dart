@@ -12,7 +12,7 @@ class AppBarIconButton extends StatelessWidget {
       onTap: onTap,
       child: CircleAvatar(
         backgroundColor: Colors.grey.shade200,
-        radius: 16,
+        radius: 18,
         child: Icon(icon,color: Colors.black45,size: 18,),
       ),
     );

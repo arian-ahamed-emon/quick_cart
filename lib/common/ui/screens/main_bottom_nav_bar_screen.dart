@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/app/app_colors.dart';
+import 'package:e_commerce_app/app/assets_path.dart';
 import 'package:e_commerce_app/common/controller/main_bottom_nav_controller.dart';
 import 'package:e_commerce_app/features/cart/ui/screens/cart_list_screen.dart';
 import 'package:e_commerce_app/features/category/ui/screens/category_list_screen.dart';
@@ -17,19 +18,21 @@ class MainBottomNavBarScreen extends StatefulWidget {
 }
 
 class _MainBottomNavBarScreenState extends State<MainBottomNavBarScreen> {
-  final List<Widget> _screens = [
-    const HomeScreen(),
-    const CategoryListScreen(),
-    const CartListScreen(),
-    const WishListScreen(),
+  final List<Widget> _screens = const [
+    HomeScreen(),
+    CategoryListScreen(),
+    CartListScreen(),
+    WishListScreen(),
   ];
 
-  final List<IconData> _iconPaths = [
-    Icons.home,
-    Icons.category,
-    Icons.shopping_cart,
-    Icons.favorite_border,
+  final List<String> _imagePath = [
+    AssetsPath.bottomNavHomeIcon,
+    AssetsPath.bottomNavCategoryIcon,
+    AssetsPath.bottomNavCartIcon,
+    AssetsPath.bottomNavWishListIcon,
   ];
+
+  final List<String> _labels = ['Home', 'Categories', 'Cart', 'Wish'];
 
   @override
   Widget build(BuildContext context) {
@@ -37,41 +40,35 @@ class _MainBottomNavBarScreenState extends State<MainBottomNavBarScreen> {
       builder: (bottomNavController) {
         return Scaffold(
           body: _screens[bottomNavController.selectedIndex],
-          bottomNavigationBar: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List.generate(_iconPaths.length, (index) {
-                bool isSelected = bottomNavController.selectedIndex == index;
-                return GestureDetector(
-                  onTap: () {
-                    bottomNavController.changeIndex(index);
-                  },
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(height: 6,),
-                      Icon(
-                        _iconPaths[index],
-                        size: 30,
-                        color: isSelected ? AppColors.themeColor : Colors.grey,
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        ['Home', 'Categories', 'Cart', 'Wish'][index],
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: isSelected ? Colors.teal : Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }),
-            ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: bottomNavController.selectedIndex,
+            onTap: (index) {
+              bottomNavController.changeIndex(index);
+            },
+            type: BottomNavigationBarType.fixed,
+            elevation: 8,
+            selectedItemColor: AppColors.themeColor,
+            unselectedItemColor: Colors.grey,
+            selectedLabelStyle: const TextStyle(fontSize: 12),
+            unselectedLabelStyle: const TextStyle(fontSize: 12),
+            items: List.generate(_imagePath.length, (index) {
+              return BottomNavigationBarItem(
+                icon: Image.asset(
+                  _imagePath[index],
+                  height: 26,
+                  width: 26,
+                  color: Colors.grey,
+                ),
+                activeIcon: Image.asset(
+                  _imagePath[index],
+                  width: 28,
+                  height: 28,
+                  color: AppColors.themeColor,
+                ),
+
+                label: _labels[index],
+              );
+            }),
           ),
         );
       },

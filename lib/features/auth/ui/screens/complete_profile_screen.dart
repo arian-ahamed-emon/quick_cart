@@ -1,5 +1,5 @@
+import 'package:e_commerce_app/common/ui/screens/main_bottom_nav_bar_screen.dart';
 import 'package:e_commerce_app/features/auth/ui/widgets/app_logo_widget.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
@@ -29,12 +29,11 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(25),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
-                SizedBox(height: 20),
                 AppLogoWidget(),
                 SizedBox(height: 10),
                 Text(
@@ -98,8 +97,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 ElevatedButton(
                     onPressed: () {
                       // if(_formKey.currentState!.validate()){
-                      Navigator.pushReplacementNamed(context, '/otp-varification');
-
+                      Navigator.pushReplacementNamed(context, MainBottomNavBarScreen.name);
                     },child: Text('Complete')),
               ],
             ),

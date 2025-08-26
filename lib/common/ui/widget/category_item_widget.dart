@@ -19,7 +19,7 @@ class CategoryItemWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(24),
             decoration: BoxDecoration(
               color: AppColors.themeColor.withOpacity(0.10),
               borderRadius: BorderRadius.circular(8),

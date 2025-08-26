@@ -21,7 +21,7 @@ class _EmailVarificationScreenState extends State<EmailVarificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(automaticallyImplyLeading: false,),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(30),

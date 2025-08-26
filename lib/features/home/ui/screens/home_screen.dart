@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
   AppBar buildAppBar() {
     return AppBar(
       automaticallyImplyLeading: false,
-      title: SvgPicture.asset(AssetsPath.navbarAppLogoSvg,width: 130,),
+      title: Image.asset(AssetsPath.navbarAppLogo,width: 150,),
       actions: [
         AppBarIconButton(icon: Icons.person,  onTap: () {}),
         SizedBox(width: 6),

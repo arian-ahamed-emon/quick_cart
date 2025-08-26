@@ -58,7 +58,11 @@ class _OtpVarificationScreenState extends State<OtpVarificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back_ios,size: 20,)),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(30),
@@ -101,6 +105,7 @@ class _OtpVarificationScreenState extends State<OtpVarificationScreen> {
                     return true;
                   },
                   appContext: context,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 ),
                 const SizedBox(height: 26),
                 ElevatedButton(

@@ -21,10 +21,10 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
         onPopInvokedWithResult: (_, __) => _onPop(),
         child: Scaffold(
         appBar: AppBar(
-          title: Text('Categories',style: TextStyle(fontSize: 24,color: Colors.black54),),
+          title: Text('Categories',style: TextStyle(fontSize: 20,color: Colors.black54),),
           leading: IconButton(
             onPressed: _onPop,
-            icon: Icon(Icons.arrow_back_ios,size: 24,color: Colors.black54,),
+            icon: Icon(Icons.arrow_back_ios,size: 20,color: Colors.black54,),
           ),
         ),
         body: GridView.builder(
